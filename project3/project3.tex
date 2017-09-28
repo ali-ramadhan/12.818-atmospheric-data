@@ -1,0 +1,63 @@
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{physics}
+\usepackage{siunitx}
+
+\usepackage{fancyhdr}
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+
+\usepackage[shortlabels,inline]{enumitem}
+
+% Hyperlinks with decent looking default colors.
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+  colorlinks,
+  linkcolor={red!50!black},
+  citecolor={blue!50!black},
+  urlcolor={blue!80!black}
+}
+
+% For those sexy spaced low small caps from classic-thesis!
+\usepackage{microtype}
+\usepackage{textcase}
+\DeclareRobustCommand{\spacedlowsmallcaps}[1]{%
+  \textls[80]{\scshape\MakeTextLowercase{#1}}%
+}
+
+\pagestyle{fancy} 
+\fancyhead{}
+\rhead{Ali Ramadhan}
+\lhead{12.818: Project 3}
+\chead{}
+\cfoot{\thepage}
+
+\title{\spacedlowsmallcaps{\small 12.818: Introduction to Atmospheric Data and Large-scale Dynamics}\\ \spacedlowsmallcaps{\Large Project three: Convection and atmospheric thermodynamics}}
+\author{\spacedlowsmallcaps{Ali Ramadhan}}
+\date{}
+
+% \renewcommand\thesection{\Alph{section}}
+
+\begin{document}
+\maketitle
+
+In this project we will use the concept of hydrostatic balance to estimate the \emph{tilt} of isobaric pressure surfaces in the atmosphere from the poles to the equator. The monthly/seasonal composite plots in this project were produced using NCEP\footnotemark~reanalysis data averaged from Janurary 1948 to August 2017.  The Earth System Research Laboratory of the Physical Sciences Division of NOAA provides a convenient \href{ https://www.esrl.noaa.gov/psd/cgi-bin/data/composites/printpage.pl}{web page} for producing these plots.
+
+\begin{thebibliography}{9}
+\bibitem{AMSVirtualTemp}
+American Meteorological Society, cited 2012: Virtual temperature. Glossary of Meteorology. [Available online at \url{http://glossary.ametsoc.org/wiki/Virtual_temperature}]
+
+\bibitem{Wallace}
+Wallace, John M. and Peter V. Hobbs. \textit{Atmospheric Science; An Introductory Survey}. Elsevier. Second Edition, 2006. Chapter 1.
+\end{thebibliography}
+
+\end{document}

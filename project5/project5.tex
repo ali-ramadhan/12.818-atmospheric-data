@@ -97,12 +97,27 @@ At this location $\phi \approx \SI{57}{\degree N}$ giving a Coriolis parameter o
 where we approximated the distance between the \SI{5460}{\m} and \SI{5600}{\m} geopotential height contours using Google Maps. This gives us an estimated geostrophic wind speed of $u \approx \SI{20.4}{\m/\s}$ (and $v \approx 0$) which agrees closely with the observed westerly wind of \SI{20}{\m/\s} as indicated by the wind barb.
 
 \section{Ageostrophic motion}
+If the observed wind pattern is not completely described by geostrophic balance, then any difference between the observed wind and the geostrophic wind may be called the \emph{ageostrophic wind}. We should be able to detect it quite well by looking at atmospheric jets, particularly their entrance and exit through surfaces of constant pressure. Figure \ref{fig:jet} shows a geopotential contour plot and wind velocity field at \SI{200}{\hecto\Pa} over the North Atlantic on October 17, 2017 0Z, while figure \ref{fig:jet_geo} shows the geostrophic wind velocity field and figure \ref{fig:jet_age} shows the ageostrophic wind velocity field.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[trim={0.5cm 2cm 0.5cm 0},clip,width=\textwidth]{200hPa_hght_wind_jet_inout}
-	\caption{Wind velocity field at \SI{200}{\hecto\Pa} over the North Atlantic on October 17, 2017 0Z.}
+	\caption{Geopotential contour plot and wind velocity field at \SI{200}{\hecto\Pa} over the North Atlantic on October 17, 2017 0Z.}
 	\label{fig:jet}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[trim={0.5cm 2cm 0.5cm 0},clip,width=\textwidth]{200hPa_hght_geowind_jet_inout}
+	\caption{Geopotential contour plot and geostrophic wind velocity field at \SI{200}{\hecto\Pa} over the North Atlantic on October 17, 2017 0Z.}
+	\label{fig:jet_geo}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[trim={0.5cm 2cm 0.5cm 0},clip,width=\textwidth]{200hPa_hght_agewind_jet_inout}
+	\caption{Geopotential contour plot and ageostrophic wind velocity field at \SI{200}{\hecto\Pa} over the North Atlantic on October 17, 2017 0Z.}
+	\label{fig:jet_age}
 \end{figure}
 
 \section{Geostrophic and ageostrophic winds in a hurricane remnant}

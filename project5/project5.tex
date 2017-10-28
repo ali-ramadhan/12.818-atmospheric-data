@@ -32,6 +32,9 @@
 	urlcolor={blue!80!black}
 }
 
+% Keep figures in their own sections.
+\usepackage[section]{placeins}
+
 % For those sexy spaced low small caps from classic-thesis!
 \usepackage{microtype}
 \usepackage{textcase}
@@ -106,6 +109,17 @@ If the observed wind pattern is not completely described by geostrophic balance,
 	\label{fig:jet}
 \end{figure}
 
+As we saw in class, decomposing the velocity field $\bm{u} = (u,v)$ into geostrophic $\bm{u}_g = (u_g, v_g)$ and ageostrophic $\bm{u}_a = (u_a,v_a)$ components
+\begin{equation*}
+  \bm{u} = \bm{u}_g + \bm{u}_a
+\end{equation*}
+we can relate the longitudinal wind velocity with the latitudinal ageostrophic wind velocity by
+\begin{equation*}
+  v_a = \frac{1}{f} \frac{Du}{Dt}
+\end{equation*}
+
+Comparing the observed wind velocity field (figure \ref{fig:jet}) and the ageostrophic wind velocity field (figure \ref{fig:jet_age}), we see a northernly ageostrophic wind of \SIrange{20}{25}{\m/\s} quite far off the coast of the Atlantic United States and Canada indicating the entrance of the polar jet stream, however it is difficult to discern an exit for it as there are no other signifcant perturbations to the west in the otherwise nearly zero ageostrophic wind velocity field. Perhaps it is further east of the plotted region.
+
 \begin{figure}[h!]
 	\centering
 	\includegraphics[trim={0.5cm 2cm 0.5cm 0},clip,width=\textwidth]{200hPa_hght_geowind_jet_inout}
@@ -130,11 +144,11 @@ We will now look at the winds around Hurricane Ophelia, the easternmost Atlantic
 	\label{fig:ophelia}
 \end{figure}
 
-Near the hurricane eyewall (red oval) and using Eq. \ref{eq:1v} we estimate a northernly geostrophic wind of $v \approx \SI{80}{\m}$ as compared to the wind barb value of \SI{35}{\m} indicating that forces other than the Coriolis force and pressure gradient force are playing a large role in dictating the wind patterns near the hurricane eyewall. In this case the centripetal acceleration due to the hurricane's rotation plays a more significant role and the resultant balance between those three forces is called \emph{gradient balance} and can be represented mathematically in polar coordinates with the hurricane eyewall as the origin as
+Near the hurricane eyewall (red oval) and using Eq. \ref{eq:1v} we estimate a northernly geostrophic wind of $v \approx \SI{80}{\m}$ as compared to the wind barb value of \SI{35}{\m} indicating that forces other than the Coriolis force and pressure gradient force are playing a large role in dictating the wind patterns near the hurricane eyewall. In this case the centripetal acceleration due to the hurricane's rotation plays a more significant role and the resultant balance between those three forces is called \emph{gradient balance} or the \emph{gradient wind} and can be represented mathematically in polar coordinates with the hurricane eyewall as the origin as
 \begin{equation*}
 	\frac{v^2}{r} + fv = g\p{h}{r}
 \end{equation*}
-and is simply Eq. \eqref{eq:1v} with an extra term corresponding to the centripetal acceleration.
+and is simply Eq. \eqref{eq:1v} with an extra term corresponding to the centripetal acceleration, as we saw in class.
 
 On the outer rain bands (blue oval) and using Eq. \ref{eq:1u} we estimate a westerly geostrophic wind of $u \approx \SI{32}{\m}$ which compares more favorably with the wind barb value of \SI{25}{\m/\s}, however indicating that the centripetal force produced by the hurricane is still rather significant. In between the eyewall and outer rain bands (green oval) and using Eq. \ref{eq:1v} we estimate a southernly geostrophic wind of \SI{50}{\m/\s} which still compares rather favorably with the wind barb value of \SI{45}{\m/\s}.
 
@@ -146,6 +160,12 @@ We can estimate the importance of the centripetal acceleration term by calculati
 	\caption{Rossby number contour map around Hurricane Ophelia at \SI{850}{\hecto\Pa} off the coast of Western Europe (Spain, France, Great Britain, and Ireland) on October 16, 2017 0Z.}
 	\label{fig:ophelia_rossby}
 \end{figure}
+
+As we saw in class, the Rossby number can be calculated from the observed wind velocity $v$ and the geostrophic wind velocity $v_g$ via the relation
+\begin{equation}
+  \mathrm{Ro} = \frac{v_g}{v} - 1
+\end{equation}
+which gives us Rossby numbers of 1.29, 0.28, and 0.11 for the red oval (closest to the eyewall), green oval (intermediate), and the blue oval (furtheest from the eyewall). These values seem a little underestimated however we do not have a high enough resolution to probe the region near the eyewall where $\mathrm{Ro} > 2$. There are probably other effects besides the three forces we discussed contributing to the advective and rotational terms used to calculate the Rossby number.
 
 %\begin{thebibliography}{9}
 %\bibitem{Kalnay}

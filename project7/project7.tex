@@ -78,16 +78,33 @@ where
 \end{equation*}
 is the geostrophic derivative operator, $\zeta_g + f$ is the absolute vorticity, $f$ is the planetary vorticity, $\zeta_g$ is the geostrophic relative vorticity evaluated on an isobaric surface, $\omega$ is the vertical velocity in pressure coordinates, $w$ is the vertical velocity in height coordinates, $\bm{v}$ is the wind velocity field, and $\bm{v}_g$ is the geostrophic wind velocity field.
 
+Flows in \emph{quasi-geostrophic motion} have the Coriolis force and pressure  gradient forces \emph{almost} balancing each other, with interia providing the residual effect, as opposed to geostrophic balance where the Coriolis and pressure gradient forces are exactly in balance.
+
+The quasi-geostrophic equation exhibits some useful properties. One is that it states that the sum of the relative, planetary, and stretching vorticities must be conserved following geostrophic motions. Another is that it allows for the determination of the geostrophic wind velocity and temperature fields from knowledge of the geopotential height only. Furthermore, if the time evolution of the geopotential height field is also known, vertical motions in the atmosphere may be inferred.
+
 Note that positive vorticity is associated with low pressure systems, while negative vorticity is associated with high pressure systems.
 
 Also note that the local rate of change of geostrophic vorticity is determined by the sum of two terms; the advection of the absolute vorticity by the geostrophic wind, and the the stretching or shrinking of fluid columns via a  divergence.
+
+\section{Quasi-geostrophic scaling}
 
 \begin{figure}[h!]
   \centering
   % trim={0 0 3.5cm 0}, clip,
   \includegraphics[width=\textwidth]{thta_normwnd_70W_25-70N}
-  \caption{Potential temperature field at \SI{500}{\hecto\Pa} over the Northern Hemisphere on February 14, 2016 (0Z) showcasing a particularly cold front as it is about to pass through the Northeastern United States.}
-  \label{fig:thta_500hPa_NH}
+  \caption{Meridional cross-section of the potential temperature (K) and observed wind velocity (normal to the cross-section) from \SI{25}{\degree N} to \SI{70}{\degree N} along the \SI{70}{\degree W} meridian (chosen to pass through Boston, MA) on November 2, 2017 (0Z).}
+  \label{fig:thta_normwnd_mer_xsec}
 \end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{thta_normwnd_42N_120W-20E}
+  \caption{Zonal cross-section of the potential temperature (K) and observed wind velocity (normal to the cross-section) from \SI{120}{\degree W} to \SI{20}{\degree E} along the \SI{42}{\degree N} meridian (chosen to pass through Boston, MA) on November 2, 2017 (0Z).}
+  \label{fig:thta_normwnd_zon_xsec}
+\end{figure}
+
+\section{The Quasi-geostrophic vorticity equation}
+
+\section{The Brunt--Väisälä frequency}
 
 \end{document}

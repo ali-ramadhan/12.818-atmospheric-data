@@ -117,9 +117,15 @@ Figure \ref{fig:thta_normwnd_mer_xsec} shows a meridional cross-section of the p
 
 We can estimate the troposhperic scale height $\displaystyle H = \frac{R T_0}{g}$ where $T_0$ represents a mean tropospheric temperature in the region of the system. By inspection of the potential temperature contours over the low-pressure system in figure \ref{fig:thta_normwnd_zon_xsec} we see that $T_0 = \SI{290}{\K}$ is a reasonable estimate of the surface temperature as potential temperature and air temperature coincide at mean sea level pressure. The actual air temperature may be higher due to the low-pressure system being near the Rocky Mountains which are significantly above sea level. Using $R = \SI{287.058}{\J/\kg.\K}$ this gives us a tropospheric scale height of $H = \SI{8.5}{\km}$ which seems reasonable for the mid-latitudes.
 
-We can estimate the buoyancy frequency $\displaystyle N^2 = \frac{g}{\vartheta_0} \p{\vartheta}{z}$ where $\vartheta_0$ is a reference mean potential temperature.
+We can estimate the buoyancy frequency $\displaystyle N^2 = \frac{g}{\vartheta_0} \p{\vartheta}{z}$ where $\vartheta_0$ is a reference mean potential temperature. We will take $\vartheta_0$ to be the mean potential temperature over the low-pressure system.
 
 \section{The Quasi-geostrophic vorticity equation}
+We will now evaluate the different terms in the quasi-geostrophic vorticity equation. To start off, we plot the relative vorticity $\zeta_g$ at \SI{500}{\hecto\Pa} over Eastern Asia in figure \ref{fig:vorwnd_obs_500hPa_China} and we will eventually focus on the synoptic system bordering Mongolia and China.
+
+Note that GEMPACK plots the negative of the vorticity and so
+\begin{equation*}
+	- \bm{u} \cdot \nabla (\zeta_g + f) = f \nabla \cdot \bm{u}
+\end{equation*}
 
 \begin{figure}[h!]
 	\centering
@@ -138,7 +144,7 @@ We can estimate the buoyancy frequency $\displaystyle N^2 = \frac{g}{\vartheta_0
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\textwidth]{avorwnd_500hPa_China}
-	\caption{Contour plot of the absolute vorticity $\zeta_g + f$ ($\times 10^5$) and geopotential height field at \SI{500}{\hecto\Pa} over Eastern Asia on November 9, 2017 (0Z).}
+	\caption{Contour plot of the absolute vorticity $\zeta_g + f$ ($\times 10^5$) and geopotential height field at \SI{500}{\hecto\Pa} over China on November 9, 2017 (0Z).}
 	\label{fig:avorwnd_500hPa_China}
 \end{figure}
 
@@ -156,6 +162,12 @@ We can estimate the buoyancy frequency $\displaystyle N^2 = \frac{g}{\vartheta_0
 	\label{fig:dvordt_500hPa_China}
 \end{figure}
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{adv_avor_uobs_500hPa_China}
+	\caption{Contour plot of the advection of absolute vorticity ($\times 10^{10}$) at \SI{500}{\hecto\Pa} over Eastern Asia on November 9, 2017 (0Z).}
+	\label{fig:adv_avor_uobs_500hPa_China}
+\end{figure}
 
 \section{The Brunt--Väisälä frequency}
 

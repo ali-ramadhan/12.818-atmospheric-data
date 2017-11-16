@@ -117,60 +117,80 @@ Figure \ref{fig:thta_normwnd_mer_xsec} shows a meridional cross-section of the p
 
 We can estimate the troposhperic scale height $\displaystyle H = \frac{R T_0}{g}$ where $T_0$ represents a mean tropospheric temperature in the region of the system. By inspection of the potential temperature contours over the low-pressure system in figure \ref{fig:thta_normwnd_zon_xsec} we see that $T_0 = \SI{290}{\K}$ is a reasonable estimate of the surface temperature as potential temperature and air temperature coincide at mean sea level pressure. The actual air temperature may be higher due to the low-pressure system being near the Rocky Mountains which are significantly above sea level. Using $R = \SI{287.058}{\J/\kg.\K}$ this gives us a tropospheric scale height of $H = \SI{8.5}{\km}$ which seems reasonable for the mid-latitudes.
 
-We can estimate the buoyancy frequency $\displaystyle N^2 = \frac{g}{\vartheta_0} \p{\vartheta}{z}$ where $\vartheta_0$ is a reference mean potential temperature. We will take $\vartheta_0$ to be the mean potential temperature over the low-pressure system.
+We can estimate the buoyancy frequency $\displaystyle N^2 = \frac{g}{\vartheta_0} \p{\vartheta}{z}$ where $\vartheta_0$ is a reference mean potential temperature. Taking the troposphere to lie between \SI{1000}{\hecto\Pa} and \SI{200}{\hecto\Pa}, the potential temperature increases from \SI{290}{\K} to \SI{340}{\K} so the mean potential temperature over the troposphere is $\vartheta_0 = \SI{315}{\K}$ over a height of approximately \SI{12}{\kilo\m} and so $\partial \vartheta/\partial z \approx \SI{50}{K}/\SI{12000}{\m} = 0.0042$ we get a buoyancy frequency of $N = \SI{0.01}{\s^{-1}}$ for the troposphere. For the layer bounded by \SI{500}{\hecto\Pa} and \SI{300}{\hecto\Pa}; $\vartheta_0 = \SI{312.5}{\K}$, $\partial \vartheta/\partial z \approx \SI{10}{K}/\SI{4300}{\m} = 0.0042$, and so $N \approx \SI{0.008}{\s^{-1}}$, just slightly lower.
+
+The Rossby radius of deformation is $\displaystyle L_D = \frac{NH}{f} \approx \SI{850}{\km}$ where we took $N \approx \SI{0.01}{\s^{-1}}$, $H \approx \SI{8.5}{\km}$, and $f \approx \SI{1e-4}{\radian/\s}$.
+
+The Richardson number is defined as $\displaystyle \mathrm{Ri} = N^2 / \left( \p{u}{z} \right)^2$. Taking $N \approx \SI{0.01}{\s^{-1}}$ for the troposphere, we will estimate $\partial u/\partial z \approx (\SI{25}{\m/\s}) / \SI{12000}{\m} = \SI{0.004}{\s^{-1}}$ where we took $u(\SI{200}{\hecto\Pa}) \approx \SI{25}{\m/\s}$. Then $\mathrm{Ri} \approx 6.25$ for the troposphere. For the layer bounded by \SI{500}{\hecto\Pa} and \SI{300}{\hecto\Pa} we can use the fact that $u(\SI{300}{\hecto\Pa}) \approx \SI{38}{\m/\s}$ and $u(\SI{500}{\hecto\Pa}) \approx \SI{21}{\m/\s}$ so that $\partial u/\partial z \approx (\SI{27}{\m/\s}) / \SI{4300}{\m} = \SI{0.006}{\s^{-1}}$ and thus $\mathrm{Ri} \approx 1.6$.
+
+Looking at the zonal cross-section (figure \ref{fig:thta_normwnd_zon_xsec}) I would estimate that the low-pressure system over Colorado has a length scale of approximately \SI{3200}{\km} from one wind velocity peak to the next (the \SI{15}{\m/\s} contours), while the high-pressure system over the North Atlantic has a length scale of approximately \SI{2040}{\km} from the \SI{-45}{\m/\s} contour to the \SI{30}{\m/\s} contour. This are obviously quite larger than the Rossby radius of deformation estimate of \SI{850}{\km} that we came up with. Two reason for this discrepancy may be that we are using the wrong definition for the length scale of a synoptic system and that we are measuring this length scale at the wrong height.
 
 \section{The Quasi-geostrophic vorticity equation}
 We will now evaluate the different terms in the quasi-geostrophic vorticity equation. To start off, we plot the relative vorticity $\zeta_g$ at \SI{500}{\hecto\Pa} over Eastern Asia in figure \ref{fig:vorwnd_obs_500hPa_China} and we will eventually focus on the synoptic system bordering Mongolia and China.
 
-Note that GEMPACK plots the negative of the vorticity and so
-\begin{equation*}
-	- \bm{u} \cdot \nabla (\zeta_g + f) = f \nabla \cdot \bm{u}
-\end{equation*}
-
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\textwidth]{vorwnd_obs_500hPa_China}
-	\caption{Contour plot of the vorticity ($\times 10^5$) field calculated from the observed wind velocity field at \SI{500}{\hecto\Pa} over Eastern Asia on November 9, 2017 (0Z).}
+	\caption{Contour plot of the vorticity ($\times \SI{e5}{\s^{-1}}$) field calculated from the observed wind velocity field at \SI{500}{\hecto\Pa} over Eastern Asia on November 9, 2017 (0Z).}
 	\label{fig:vorwnd_obs_500hPa_China}
 \end{figure}
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=\textwidth]{vorgeo_500hPa_China}
-	\caption{Contour plot of the geostrophic vorticity ($\times 10^5$) field (that is, calculated from the geostrophic wind velocity field) at \SI{500}{\hecto\Pa} over Eastern Asia on November 9, 2017 (0Z).}
-	\label{fig:vorgeo_obs_500hPa_China}
-\end{figure}
+It is a little difficult to see without colored contouring but there is a vorticity peak south of the Mongolia-China border peaking at $\SI{16e-5}{\s^{-1}}$. There are two other similar vorticity peaks, one north of Japan and another on the top-left corner of the map. The troughs are muted in comparison and some prominent troughs tend to lie between the peaks.
+
+As the planetary vorticity $f$ coincides with the Coriolis parameter which is on the order of $\SI{e-4}{\s^{-1}}$, the relative vorticity seems to be roughly on the same order, especially at the vorticity peaks. The vorticity troughs have a smaller magnitude at around $\SI{-4e-5}{\s^{-1}}$, but they are negative while $f > 0$ for the Northern Hemisphere.
+
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width=\textwidth]{vorgeo_500hPa_China}
+%	\caption{Contour plot of the geostrophic vorticity ($\times 10^5$) field (that is, calculated from the geostrophic wind velocity field) at \SI{500}{\hecto\Pa} over Eastern Asia on November 9, 2017 (0Z).}
+%	\label{fig:vorgeo_obs_500hPa_China}
+%\end{figure}
+
+Figure \ref{fig:avorwnd_500hPa_China} shows a contour plot of the absolute vorticity $\zeta_g + f$ and geopotential height field at \SI{500}{\hecto\Pa} over China. The projection has changed and so we now focus on the vorticity peak above Mongolia. I would expect the largest advection of absolute vorticity around regions with the highest vorticity gradients, that is, along the fronts (colored green in figure \ref{fig:avorwnd_500hPa_China}) in the direction of the geostrophic flow as the horizontal advection term is given by $\bm{u}_g \cdot \nabla (\zeta_g + f)$.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\textwidth]{avorwnd_500hPa_China}
-	\caption{Contour plot of the absolute vorticity $\zeta_g + f$ ($\times 10^5$) and geopotential height field at \SI{500}{\hecto\Pa} over China on November 9, 2017 (0Z).}
+	\caption{Contour plot of the absolute vorticity $\zeta_g + f$ ($\times \SI{e5}{\s^{-1}}$) and geopotential height field at \SI{500}{\hecto\Pa} over China on November 9, 2017 (0Z).}
 	\label{fig:avorwnd_500hPa_China}
 \end{figure}
+
+Plotting the observed horizontal advection of absolute vorticity in figure \ref{fig:horizontal_advection_avor_500hPa_China}, it's a little difficult to see but the advection is indeed the greatest surrounding the vorticity peak/front with some horizontal advection around the vorticity troughs. The magnitude of the field peaks at above $\SI{9d-9}{\s^{-2}}$ over the peaks and below $\SI{-9d-9}{\s^{-2}}$ over the troughs.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\textwidth]{horizontal_advection_avor_500hPa_China}
-	\caption{Contour plot of the horizontal advection of absolute vorticity $\bm{u}_g \cdot \nabla(\zeta_g + f)$ ($\times 10^5$) and geopotential height field at \SI{500}{\hecto\Pa} over Eastern Asia on November 9, 2017 (0Z).}
+	\caption{Contour plot of the horizontal advection of absolute vorticity $\bm{u}_g \cdot \nabla(\zeta_g + f)$ ($\times \SI{e10}{\s^{-2}}$) and geopotential height field at \SI{500}{\hecto\Pa} over Eastern Asia on November 9, 2017 (0Z).}
 	\label{fig:horizontal_advection_avor_500hPa_China}
 \end{figure}
+
+In figure \ref{fig:pmsl_China} we plot the surface pressure to check if it is consistent with the pattern of upper level divergence. It agrees very well as there is a clear high-pressure system over Mongolia below which we saw a vorticity front and some associated horizontal advection of absolute vorticity.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{pmsl_China}
+	\caption{Contour plot of the mean sea level pressure over Eastern Asia on November 9, 2017 (0Z).}
+	\label{fig:pmsl_China}
+\end{figure}
+
+Figure \ref{fig:dvordt_500hPa_China} shows a contour plot of the time derivative of the relative vorticity $\partial\zeta/\partial t$ over Eastern Asia computed as a finite different from the relative vorticity at 6Z and 0Z. We see its magnitude peaks around vorticity peaks at values up to $\SI{6e-9}{\s^{-2}}$ and around vorticity troughs with values up to $\SI{-8e-9}{\s^{-2}}$.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\textwidth]{dvordt_500hPa_China}
-	\caption{Contour plot of the rate of change of relative vorticity $\partial\zeta/\partial t$ ($\times 10^9$) and geopotential height field at \SI{500}{\hecto\Pa} over Eastern Asia on November 9, 2017 (0Z).}
+	\caption{Contour plot of the rate of change of relative vorticity $\partial\zeta/\partial t$ ($\times \SI{1e9}{\s^{-2}}$) and geopotential height field at \SI{500}{\hecto\Pa} over Eastern Asia on November 9, 2017 (0Z).}
 	\label{fig:dvordt_500hPa_China}
 \end{figure}
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=\textwidth]{adv_avor_uobs_500hPa_China}
-	\caption{Contour plot of the advection of absolute vorticity ($\times 10^{10}$) at \SI{500}{\hecto\Pa} over Eastern Asia on November 9, 2017 (0Z).}
-	\label{fig:adv_avor_uobs_500hPa_China}
-\end{figure}
+The magnitudes of the $\partial\zeta/\partial t$ and $\bm{u}_g \cdot \nabla(\zeta_g + f)$ terms is very similar with the $\bm{u}_g \cdot \nabla(\zeta_g + f)$ term being slightly larger. Thus we would expect the magnitude of the residual field to be approximately the difference between the $\partial\zeta/\partial t$ and $\bm{u}_g \cdot \nabla(\zeta_g + f)$ fields, or roughly $<\SI{3e-9}{\s^{-2}}$.
 
-\section{The Brunt--Väisälä frequency}
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width=\textwidth]{adv_avor_uobs_500hPa_China}
+%	\caption{Contour plot of the advection of absolute vorticity ($\times 10^{10}$) at \SI{500}{\hecto\Pa} over Eastern Asia on November 9, 2017 (0Z).}
+%	\label{fig:adv_avor_uobs_500hPa_China}
+%\end{figure}
 
-
+% \section{The Brunt--Väisälä frequency}
 
 \end{document}

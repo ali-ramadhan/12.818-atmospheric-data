@@ -67,15 +67,49 @@
 \begin{document}
 \maketitle
 
+In this project, we will make estimates for the vertical velocity of air parcels in the atmosphere using two different methods, by inference from the vorticity equation and by the use of isentropic analysis.
+
 \section{Estimation of vertical velocity from the vorticity equation}
+As we saw in class, the vorticity equation
+\begin{equation} \label{eq:voreq}
+  f \p{\omega}{p} = \p{\zeta_g}{t} + \bm{u}_g \cdot \nabla (\zeta_g + f) + g \p{}{p} (\hat{\bm{z}} \cdot \nabla \times \bm{\tau})
+\end{equation}
+relates the change in vorticity to the difference in vertical velocity at the top and bottom of the column, and so if the vertical velocity at one end of the column is known, the vertical velocity at the other end can be inferred from the vorticity equation. Here, $\zeta_g + f$ is the absolute vorticity, $f$ is the planetary vorticity, $\zeta_g$ is the geostrophic relative vorticity evaluated on an isobaric surface, $\omega$ is the vertical velocity in pressure coordinates, $\bm{\tau}$ is the surface stress vector, $g$ is the acceleration due to gravity, and $\bm{u}_g$ is the geostrophic wind velocity field.
+
+The $\p{\zeta_g}{t}$ term is the rate of change of relative vorticity (figure \ref{fig:dvordt_700hPa_MI}), while $\bm{u}_g \cdot \nabla (\zeta_g + f)$ represents the horizontal advection of absolute vorticity (figure \ref{fig:hor_adv_vor_MI_850hPa}) and $g \p{}{p} (\hat{\bm{z}} \cdot \nabla \times \bm{\tau})$ the destruction of vorticity by surface stress, which becomes significant only near the Earth's surface and so we won't consider it here. For this section, we will be looking at the Great Lakes region.
+
+Discretizing the $\partial \omega / \partial p$ derivative in \eqref{eq:voreq} using a first-order finite difference we get
+\begin{equation*}
+f \frac{\omega(\SI{850}{\hecto\Pa}) - \omega(\SI{700}{\hecto\Pa})}{\Delta p} = \p{\zeta_g}{t} + \bm{u}_g \cdot \nabla (\zeta_g + f) + \underbrace{g \p{}{p} (\hat{\bm{z}} \cdot \nabla \times \bm{\tau})}_\text{$=0$ near the Earth's surface}
+\end{equation*}
+where $\Delta p = \SI{850}{\hecto\Pa} - \SI{700}{\hecto\Pa} = \SI{150}{\hecto\Pa}$ and we are ignoring effects due to surface stresses and wind stress curl. Thus we can estimate the vertical velocity at \SI{850}{\hecto\Pa} from the vertical velocity at \SI{700}{\hecto\Pa} using
+\begin{equation*}
+\omega(\SI{850}{\hecto\Pa}) = \omega(\SI{700}{\hecto\Pa}) + \frac{\Delta p}{f} \left[ \p{\zeta_g}{t} + \bm{u}_g \cdot \nabla (\zeta_g + f) \right]
+\end{equation*}
+
+% Now just fucking check by plotting the field according to the above equation and plotting 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth,trim={2.5cm 1cm 2.5cm 0},clip]{dvordt_700hPa_MI}
+	\caption{Contour plot of the rate of change of relative vorticity ($\times \SI{e10}{\per\s\squared}$) at \SI{700}{\hecto\Pa} over the Great Lakes region between November 16, 2017 0Z and 6Z.}
+	\label{fig:dvordt_700hPa_MI}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth,trim={2.5cm 1cm 2.5cm 0},clip]{hor_adv_vor_MI_850hPa}
+  \caption{Contour plot of the Horizontal advection of absolute vorticity ($\times \SI{e10}{\per\s\squared}$) at \SI{850}{\hecto\Pa} over the Great Lakes region between November 16, 2017 0Z and 6Z.}
+  \label{fig:hor_adv_vor_MI_850hPa}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth,trim={2.5cm 1cm 2.5cm 0},clip]{omeg_MI_700hPa}
+  \caption{Contour plot of the vertical velocity in pressure coordinates $\omega$ ($\times \SI{e3}{\Pa\per\s}$) at \SI{700}{\hecto\Pa} over the Great Lakes region between November 16, 2017 0Z and 6Z.}
+  \label{fig:hor_adv_vor_MI_850hPa}
+\end{figure}
 
 \section{Estimation of vertical velocity using isentropic analysis}
-
-%\begin{figure}[h!]
-%	\centering
-%	\includegraphics[width=\textwidth]{adv_avor_uobs_500hPa_China}
-%	\caption{Contour plot of the advection of absolute vorticity ($\times 10^{10}$) at \SI{500}{\hecto\Pa} over Eastern Asia on November 9, 2017 (0Z).}
-%	\label{fig:adv_avor_uobs_500hPa_China}
-%\end{figure}
 
 \end{document}

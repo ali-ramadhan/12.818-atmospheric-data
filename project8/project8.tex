@@ -107,9 +107,58 @@ where $\Delta p = \SI{850}{\hecto\Pa} - \SI{700}{\hecto\Pa} = \SI{150}{\hecto\Pa
   \centering
   \includegraphics[width=\textwidth,trim={2.5cm 1cm 2.5cm 0},clip]{omeg_MI_700hPa}
   \caption{Contour plot of the vertical velocity in pressure coordinates $\omega$ ($\times \SI{e3}{\Pa\per\s}$) at \SI{700}{\hecto\Pa} over the Great Lakes region between November 16, 2017 0Z and 6Z.}
-  \label{fig:hor_adv_vor_MI_850hPa}
+  \label{fig:omega_MI_700hPa}
 \end{figure}
 
 \section{Estimation of vertical velocity using isentropic analysis}
+Another method of estimating vertical velocities is by inference from isentropic analysis. The premise of this method relies on the fact that away from clouds, potential temperature is approximately convserved for air parcels and so their trajectories lie on an isentropic surface, i.e. a surface of constant entropy. We can obtain an estimate of the vertical velocity from the change in pressure level of the surface along such a trajectory as $\omega = dp/dt$.
+
+The reason we chose to look at the Great Lakes region in the previous section was due to the presence of a low-pressure system over the Great Lakes region on November 16, 2017 0Z (clearly seen in figures \ref{fig:thta_pres_field_MI_0Z} and \ref{fig:thta_pres_field_MI_6Z}). The zonal cross-sections at 0Z and 6Z (figures \ref{fig:thta_171116_0Z_EW} and \ref{fig:thta_171116_6Z_EW}) and the meridional cross-sections at 0Z and 6Z (figure \ref{fig:thta_171116_0Z_NS_lon80W} and \ref{fig:thta_171116_6Z_NS}) all suggest that the \SI{300}{\K} potential temperature surface would be a suitable one to track air parcel trajectories on as the pressure changes significantly on it, providing us with a clear signal for which we can estimate vertical velocities.
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{thta_171116_0Z_EW}
+  \caption{Zonal cross-section of the potential temperature at \SI{45}{\degree N} and from \SI{110}{\degree W} to \SI{70}{\degree W} on November 16, 2017 0Z.}
+  \label{fig:thta_171116_0Z_EW}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{thta_171116_6Z_moreEast}
+  \caption{Zonal cross-section of the potential temperature at \SI{45}{\degree N} and from \SI{110}{\degree W} to \SI{60}{\degree W} on November 16, 2017 6Z (6 hours later).}
+  \label{fig:thta_171116_6Z_EW}
+\end{figure}
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{thta_171116_0Z_NS_lon80W}
+  \caption{Meridional cross-section of the potential temperature at \SI{80}{\degree W} and from \SI{30}{\degree N} to \SI{55}{\degree N} on November 16, 2017 0Z.}
+  \label{fig:thta_171116_0Z_NS_lon80W}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{thta_171116_6Z_NS}
+  \caption{Meridional cross-section of the potential temperature at \SI{80}{\degree W} and from \SI{30}{\degree N} to \SI{55}{\degree N} on November 16, 2017 6Z.}
+  \label{fig:thta_171116_6Z_NS}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth,trim={2.5cm 1cm 2.5cm 0},clip]{thta_pres_field_MI_0Z}
+  \caption{Contour plot of the pressure at the \SI{300}{\K} potential temperature isentropic surface with the observed wind velocity field superimposed, on November 16, 2017 0Z.}
+  \label{fig:thta_pres_field_MI_0Z}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth,trim={2.5cm 1cm 2.5cm 0},clip]{thta_pres_field_MI_6Z}
+  \caption{Contour plot of the pressure at the \SI{300}{\K} potential temperature isentropic surface with the observed wind velocity field superimposed, on November 16, 2017 6Z (6 hours later).}
+  \label{fig:thta_pres_field_MI_6Z}
+\end{figure}
+
+% One obvious process that might compromise our results are clouds
 
 \end{document}
